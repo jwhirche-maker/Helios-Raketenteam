@@ -1,68 +1,172 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Helios Raketenteam</title>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f7fb;
-      color: #222;
-    }
-
-    header {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px;
-    }
-
-    .box {
-      max-width: 800px;
-    }
-
-    h1 {
-      font-size: 56px;
-      margin-bottom: 20px;
-    }
-
-    p {
-      font-size: 20px;
-      line-height: 1.6;
-      margin-bottom: 30px;
-    }
-
-    a {
-      display: inline-block;
-      padding: 16px 32px;
-      background: #111;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
-
-    a:hover {
-      background: #333;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Helios | Raketenprojekt</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <header>
-    <div class="box">
-      <h1>Helios Raketenteam</h1>
+
+  <div class="space-background" id="spaceBackground"></div>
+
+  <!-- Start Overlay -->
+  <div class="start-overlay" id="startOverlay">
+    <div class="overlay-card">
+      <p class="label">Raketenprojekt</p>
+      <h1>HELIOS</h1>
       <p>
-        Willkommen auf unserer ersten Website.  
-        Hier entsteht die offizielle Seite unseres Projekts.
+        Willkommen auf der Projektseite von Helios.  
+        Wir entwickeln, planen und bauen unser eigenes Raketenprojekt.
       </p>
-      <a href="#kontakt">STARTEN</a>
+      <button id="startButton">Mission starten</button>
     </div>
+  </div>
+
+  <!-- Menübutton -->
+  <button class="menu-button" id="menuButton" aria-label="Menü öffnen">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Seitliches Menü -->
+  <nav class="side-menu" id="sideMenu">
+    <p class="menu-title">Navigation</p>
+    <a href="#start">Start</a>
+    <a href="#sponsoren">Sponsoren</a>
+    <a href="#projekte">Unsere Projekte</a>
+    <a href="#impressum">Impressum</a>
+  </nav>
+
+  <!-- Startbereich -->
+  <header class="hero" id="start">
+    <div class="rocket"></div>
+
+    <p class="label">Projekt Helios</p>
+    <h1>Into the Blue</h1>
+    <p class="hero-text">
+      Helios steht für Technik, Teamgeist und den Traum, ein eigenes Raketenprojekt
+      Schritt für Schritt Wirklichkeit werden zu lassen.
+    </p>
+
+    <a href="#projekte" class="hero-link">Projekt entdecken</a>
   </header>
+
+  <!-- Sponsoren -->
+  <section id="sponsoren">
+    <div class="section-inner">
+      <p class="label">Unterstützung</p>
+      <h2>Sponsor werden</h2>
+      <p class="section-text">
+        Sie möchten unser Projekt unterstützen? Dann können Sie uns hier kurz mitteilen,
+        wer Sie sind, welche Art der Unterstützung möglich wäre und warum Sie Sponsor
+        werden möchten.
+      </p>
+
+      <div class="sponsor-area">
+        <div class="info-card">
+          <h3>Warum Sponsoring?</h3>
+          <p>
+            Mit Ihrer Unterstützung helfen Sie uns bei Materialien, Technik, Tests,
+            Design und der Weiterentwicklung unseres Raketenprojekts.
+          </p>
+        </div>
+
+        <form class="sponsor-form" id="sponsorForm">
+          <label for="company">Name des Gewerbes / Unternehmens</label>
+          <input type="text" id="company" placeholder="z. B. Muster GmbH" required />
+
+          <label for="person">Ansprechpartner</label>
+          <input type="text" id="person" placeholder="Vor- und Nachname" required />
+
+          <label for="email">E-Mail</label>
+          <input type="email" id="email" placeholder="kontakt@unternehmen.de" required />
+
+          <label for="support">Art der Unterstützung</label>
+          <select id="support">
+            <option>Finanzielle Unterstützung</option>
+            <option>Material / Bauteile</option>
+            <option>Technische Beratung</option>
+            <option>Kooperation</option>
+            <option>Sonstiges</option>
+          </select>
+
+          <label for="message">Notiz / Motivation</label>
+          <textarea id="message" placeholder="Warum möchten Sie Sponsor werden?"></textarea>
+
+          <button type="submit">Anfrage absenden</button>
+
+          <p class="form-hint">
+            Hinweis: Das Formular ist aktuell nur eine Demo. Später kann es mit einem
+            echten Formular-Dienst verbunden werden.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projekte -->
+  <section id="projekte">
+    <div class="section-inner">
+      <p class="label">Missionen</p>
+      <h2>Unsere Projekte</h2>
+      <p class="section-text">
+        Hier entsteht die Übersicht unserer Raketenprojekte. Aktuell steht vor allem
+        Phaeton 1 im Mittelpunkt.
+      </p>
+
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>Phaeton 1</h3>
+          <p>
+            Unser erstes großes Projekt. Ziel ist es, Planung, Konstruktion und
+            Umsetzung einer eigenen Rakete strukturiert aufzubauen.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <h3>Entwicklung</h3>
+          <p>
+            Von ersten Skizzen über Materialauswahl bis hin zu Tests und Verbesserungen.
+            Jeder Schritt wird dokumentiert.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <h3>Team</h3>
+          <p>
+            Helios lebt von Zusammenarbeit. Technik, Design, Organisation und Sponsoring
+            greifen dabei ineinander.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impressum -->
+  <section id="impressum">
+    <div class="section-inner">
+      <p class="label">Organisation</p>
+      <h2>Impressum</h2>
+      <p class="section-text">
+        Hier kommen später die offiziellen Informationen zu eurer Organisation hinein.
+      </p>
+
+      <div class="impressum-box">
+        <p><strong>Projekt:</strong> Helios</p>
+        <p><strong>Organisation / Schule / Verein:</strong> Hier Namen eintragen</p>
+        <p><strong>Standort:</strong> Hier Ort eintragen</p>
+        <p><strong>Verantwortlich für den Inhalt:</strong> Hier Namen eintragen</p>
+        <p><strong>Kontakt:</strong> Hier E-Mail-Adresse eintragen</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Projekt Helios — Raketenprojekt
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
