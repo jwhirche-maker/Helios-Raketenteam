@@ -3,169 +3,341 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Helios | Raketenprojekt</title>
+  <title>Helios | Raketen-Team Sachsen-Anhalt</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <div class="space-background" id="spaceBackground"></div>
-
-  <!-- Start Overlay -->
-  <div class="start-overlay" id="startOverlay">
-    <div class="overlay-card">
-      <p class="label">Raketenprojekt</p>
-      <h1>HELIOS</h1>
-      <p>
-        Willkommen auf der Projektseite von Helios.  
-        Wir entwickeln, planen und bauen unser eigenes Raketenprojekt.
-      </p>
-      <button id="startButton">Mission starten</button>
-    </div>
+  <div class="space-bg" id="spaceBg">
+    <div class="stars stars-one"></div>
+    <div class="stars stars-two"></div>
+    <div class="nebula"></div>
   </div>
 
-  <!-- Menübutton -->
   <button class="menu-button" id="menuButton" aria-label="Menü öffnen">
     <span></span>
     <span></span>
     <span></span>
   </button>
 
-  <!-- Seitliches Menü -->
   <nav class="side-menu" id="sideMenu">
-    <p class="menu-title">Navigation</p>
-    <a href="#start">Start</a>
-    <a href="#sponsoren">Sponsoren</a>
-    <a href="#projekte">Unsere Projekte</a>
-    <a href="#impressum">Impressum</a>
+    <p class="menu-label">Navigation</p>
+    <a href="#home" class="nav-link active" data-target="home">Startseite</a>
+    <a href="#projekte" class="nav-link" data-target="projekte">Projekte</a>
+    <a href="#investoren" class="nav-link" data-target="investoren">Investoren</a>
+    <a href="#team" class="nav-link" data-target="team">Team</a>
+    <a href="#impressum" class="nav-link" data-target="impressum">Impressum</a>
   </nav>
 
-  <!-- Startbereich -->
-  <header class="hero" id="start">
-    <div class="rocket"></div>
+  <div class="menu-backdrop" id="menuBackdrop"></div>
 
-    <p class="label">Projekt Helios</p>
-    <h1>Into the Blue</h1>
-    <p class="hero-text">
-      Helios steht für Technik, Teamgeist und den Traum, ein eigenes Raketenprojekt
-      Schritt für Schritt Wirklichkeit werden zu lassen.
-    </p>
+  <main class="page-shell">
 
-    <a href="#projekte" class="hero-link">Projekt entdecken</a>
-  </header>
+    <!-- STARTSEITE -->
+    <section class="page-view active" id="home" data-page="home">
+      <div class="home-layout">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
 
-  <!-- Sponsoren -->
-  <section id="sponsoren">
-    <div class="section-inner">
-      <p class="label">Unterstützung</p>
-      <h2>Sponsor werden</h2>
-      <p class="section-text">
-        Sie möchten unser Projekt unterstützen? Dann können Sie uns hier kurz mitteilen,
-        wer Sie sind, welche Art der Unterstützung möglich wäre und warum Sie Sponsor
-        werden möchten.
-      </p>
+        <div class="rocket-animation">
+          <div class="rocket-body"></div>
+          <div class="rocket-flame"></div>
+        </div>
 
-      <div class="sponsor-area">
-        <div class="info-card">
-          <h3>Warum Sponsoring?</h3>
-          <p>
-            Mit Ihrer Unterstützung helfen Sie uns bei Materialien, Technik, Tests,
-            Design und der Weiterentwicklung unseres Raketenprojekts.
+        <div class="home-card">
+          <img src="logo-helios.png" alt="Helios Logo" class="hero-logo" />
+
+          <p class="eyebrow">Das erste Raketen-Team Sachsen-Anhalts</p>
+
+          <h1>Nicht nur sehen was ist, sondern sehen was sein kann.</h1>
+
+          <p class="home-text">
+            Helios ist ein studentisches Raketenprojekt an der Hochschule Magdeburg-Stendal.
+            Wir entwickeln, konstruieren und testen Schritt für Schritt unsere erste
+            eigene Feststoffrakete.
+          </p>
+
+          <div class="home-actions">
+            <button class="primary-button" data-target="projekte">Projekte ansehen</button>
+            <button class="secondary-button" data-target="investoren">Sponsor werden</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJEKTE -->
+    <section class="page-view" id="projekte" data-page="projekte">
+      <div class="content-grid">
+        <div>
+          <p class="eyebrow">Missionen</p>
+          <h2>Unsere Projekte</h2>
+          <p class="section-text">
+            Hier findest du die aktuellen und zukünftigen Projekte von Helios.
+            Jedes Projekt kann angeklickt werden und öffnet ein Missionsfenster
+            mit Meilensteinen.
           </p>
         </div>
 
-        <form class="sponsor-form" id="sponsorForm">
-          <label for="company">Name des Gewerbes / Unternehmens</label>
-          <input type="text" id="company" placeholder="z. B. Muster GmbH" required />
-
-          <label for="person">Ansprechpartner</label>
-          <input type="text" id="person" placeholder="Vor- und Nachname" required />
-
-          <label for="email">E-Mail</label>
-          <input type="email" id="email" placeholder="kontakt@unternehmen.de" required />
-
-          <label for="support">Art der Unterstützung</label>
-          <select id="support">
-            <option>Finanzielle Unterstützung</option>
-            <option>Material / Bauteile</option>
-            <option>Technische Beratung</option>
-            <option>Kooperation</option>
-            <option>Sonstiges</option>
-          </select>
-
-          <label for="message">Notiz / Motivation</label>
-          <textarea id="message" placeholder="Warum möchten Sie Sponsor werden?"></textarea>
-
-          <button type="submit">Anfrage absenden</button>
-
-          <p class="form-hint">
-            Hinweis: Das Formular ist aktuell nur eine Demo. Später kann es mit einem
-            echten Formular-Dienst verbunden werden.
-          </p>
-        </form>
+        <div class="mission-status">
+          <span>Mission Status</span>
+          <strong>Entwicklung läuft</strong>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Projekte -->
-  <section id="projekte">
-    <div class="section-inner">
-      <p class="label">Missionen</p>
-      <h2>Unsere Projekte</h2>
-      <p class="section-text">
-        Hier entsteht die Übersicht unserer Raketenprojekte. Aktuell steht vor allem
-        Phaeton 1 im Mittelpunkt.
-      </p>
 
       <div class="project-grid">
-        <div class="project-card">
-          <h3>Phaeton 1</h3>
+        <article class="project-card" data-project="phaeton">
+          <div class="project-number">01</div>
+          <h3>Phaeton 1 / H1 Feststoffrakete</h3>
           <p>
-            Unser erstes großes Projekt. Ziel ist es, Planung, Konstruktion und
-            Umsetzung einer eigenen Rakete strukturiert aufzubauen.
+            Unser erstes großes Raketenprojekt: von der Idee über CAD, Prototyp,
+            Prüfstandtest und Erstflug bis zur kontrollierten Landung.
           </p>
-        </div>
+          <button>Meilensteine öffnen</button>
+        </article>
 
-        <div class="project-card">
-          <h3>Entwicklung</h3>
+        <article class="project-card" data-project="teststand">
+          <div class="project-number">02</div>
+          <h3>Teststand</h3>
           <p>
-            Von ersten Skizzen über Materialauswahl bis hin zu Tests und Verbesserungen.
-            Jeder Schritt wird dokumentiert.
+            Entwicklung einer sicheren Prüfstandumgebung, um erste Zündungen,
+            Schubwerte und technische Komponenten zu testen.
           </p>
-        </div>
+          <button>Meilensteine öffnen</button>
+        </article>
 
-        <div class="project-card">
-          <h3>Team</h3>
+        <article class="project-card" data-project="nextrocket">
+          <div class="project-number">03</div>
+          <h3>Nächste Rakete</h3>
           <p>
-            Helios lebt von Zusammenarbeit. Technik, Design, Organisation und Sponsoring
-            greifen dabei ineinander.
+            Der nächste Entwicklungsschritt nach Phaeton 1: langfristig eine
+            komplexere Rakete mit Flüssigtreibstoff-Konzept.
           </p>
+          <button>Meilensteine öffnen</button>
+        </article>
+      </div>
+
+      <div class="roadmap-strip">
+        <div class="roadmap-item done">
+          <span>Dez 2025</span>
+          <strong>Idee</strong>
+        </div>
+        <div class="roadmap-item done">
+          <span>Feb 2026</span>
+          <strong>Pitch</strong>
+        </div>
+        <div class="roadmap-item done">
+          <span>März 2026</span>
+          <strong>Gründung</strong>
+        </div>
+        <div class="roadmap-item active">
+          <span>Aktuell</span>
+          <strong>Entwicklung</strong>
+        </div>
+        <div class="roadmap-item upcoming">
+          <span>Geplant</span>
+          <strong>Test & Flug</strong>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Impressum -->
-  <section id="impressum">
-    <div class="section-inner">
-      <p class="label">Organisation</p>
-      <h2>Impressum</h2>
+    <!-- INVESTOREN -->
+    <section class="page-view" id="investoren" data-page="investoren">
+      <p class="eyebrow">Sponsoring</p>
+      <h2>Warum Helios unterstützen?</h2>
       <p class="section-text">
-        Hier kommen später die offiziellen Informationen zu eurer Organisation hinein.
+        Helios verbindet technische Entwicklung, regionale Innovationskraft und
+        sichtbare Markenpräsenz. Sponsoren unterstützen nicht nur ein Projekt,
+        sondern den Aufbau eines studentischen Raketen-Teams in Sachsen-Anhalt.
       </p>
 
-      <div class="impressum-box">
-        <p><strong>Projekt:</strong> Helios</p>
-        <p><strong>Organisation / Schule / Verein:</strong> Hier Namen eintragen</p>
-        <p><strong>Standort:</strong> Hier Ort eintragen</p>
-        <p><strong>Verantwortlich für den Inhalt:</strong> Hier Namen eintragen</p>
-        <p><strong>Kontakt:</strong> Hier E-Mail-Adresse eintragen</p>
-      </div>
-    </div>
-  </section>
+      <div class="investor-grid">
+        <article class="glass-card">
+          <span class="card-icon">◌</span>
+          <h3>Sichtbarkeit</h3>
+          <p>
+            Sponsoren können durch Logo-Präsenz auf Hardware, Tests, Flügen,
+            Ausstellungen, Social Media und regionaler Pressearbeit sichtbar werden.
+          </p>
+        </article>
 
-  <footer>
-    © 2026 Projekt Helios — Raketenprojekt
-  </footer>
+        <article class="glass-card">
+          <span class="card-icon">✦</span>
+          <h3>First-Mover</h3>
+          <p>
+            Als erstes studentisches Raketen-Team Sachsen-Anhalts bauen wir
+            Know-how am Standort auf und schaffen eine besondere Innovationsposition.
+          </p>
+        </article>
+
+        <article class="glass-card">
+          <span class="card-icon">↗</span>
+          <h3>Technischer Fortschritt</h3>
+          <p>
+            Unterstützung fließt direkt in Antriebssystem, Avionics, Struktur,
+            Genehmigungen, Bescheinigungen und Launchkosten.
+          </p>
+        </article>
+      </div>
+
+      <div class="investment-box">
+        <div>
+          <p class="eyebrow">Investment</p>
+          <h3>Geplante Kostenbereiche</h3>
+          <p>
+            Die Kosten verteilen sich unter anderem auf Antriebssystem, Avionics,
+            Struktur, Genehmigungen, Bescheinigungen und Launchkosten.
+          </p>
+        </div>
+
+        <div class="cost-bars">
+          <div class="cost-row">
+            <span>Antriebssystem</span>
+            <div><i style="width: 26%;"></i></div>
+            <strong>1.500 €</strong>
+          </div>
+          <div class="cost-row">
+            <span>Avionics</span>
+            <div><i style="width: 12%;"></i></div>
+            <strong>700 €</strong>
+          </div>
+          <div class="cost-row">
+            <span>Struktur</span>
+            <div><i style="width: 18%;"></i></div>
+            <strong>1.000 €</strong>
+          </div>
+          <div class="cost-row">
+            <span>Bescheinigungen</span>
+            <div><i style="width: 18%;"></i></div>
+            <strong>1.000 €</strong>
+          </div>
+          <div class="cost-row">
+            <span>Genehmigungen</span>
+            <div><i style="width: 26%;"></i></div>
+            <strong>1.500 €</strong>
+          </div>
+          <div class="cost-row total">
+            <span>Launchkosten</span>
+            <div><i style="width: 100%;"></i></div>
+            <strong>5.700 €</strong>
+          </div>
+        </div>
+      </div>
+
+      <form class="sponsor-form" id="sponsorForm">
+        <h3>Sponsoren-Anfrage</h3>
+
+        <label for="company">Name des Gewerbes / Unternehmens</label>
+        <input type="text" id="company" placeholder="z. B. Muster GmbH" required />
+
+        <label for="person">Ansprechpartner</label>
+        <input type="text" id="person" placeholder="Vor- und Nachname" required />
+
+        <label for="email">E-Mail</label>
+        <input type="email" id="email" placeholder="kontakt@unternehmen.de" required />
+
+        <label for="support">Art der Unterstützung</label>
+        <select id="support">
+          <option>Finanzielle Unterstützung</option>
+          <option>Material / Bauteile</option>
+          <option>Technische Beratung</option>
+          <option>Kooperation</option>
+          <option>Sonstiges</option>
+        </select>
+
+        <label for="message">Notiz / Motivation</label>
+        <textarea id="message" placeholder="Warum möchten Sie Sponsor werden?"></textarea>
+
+        <button type="submit" class="primary-button">Anfrage absenden</button>
+
+        <p class="form-hint">
+          Hinweis: Dieses Formular ist aktuell noch eine Demo. Für echte Nachrichten
+          kann es später mit Formspree, Google Forms oder einem Backend verbunden werden.
+        </p>
+      </form>
+    </section>
+
+    <!-- TEAM -->
+    <section class="page-view" id="team" data-page="team">
+      <p class="eyebrow">Crew</p>
+      <h2>Das Team</h2>
+      <p class="section-text">
+        Helios besteht aus Studierenden mit unterschiedlichen technischen und
+        organisatorischen Schwerpunkten.
+      </p>
+
+      <div class="team-grid">
+        <article class="team-card">
+          <h3>Fabian Huzar</h3>
+          <p>Projektmanagement · Antrieb</p>
+        </article>
+
+        <article class="team-card">
+          <h3>Janne Hirche</h3>
+          <p>Projektmanagement · Avionics</p>
+        </article>
+
+        <article class="team-card">
+          <h3>Aras Celik</h3>
+          <p>Body · CAD</p>
+        </article>
+
+        <article class="team-card">
+          <h3>Christian Punkte</h3>
+          <p>Nozzle · CAD</p>
+        </article>
+
+        <article class="team-card">
+          <h3>Niklas Baltruschat</h3>
+          <p>Igniter · CAD</p>
+        </article>
+
+        <article class="team-card">
+          <h3>Rouwei Zeng</h3>
+          <p>Body · Teststand</p>
+        </article>
+
+        <article class="team-card">
+          <h3>Jonas Büsing</h3>
+          <p>Avionics</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- IMPRESSUM -->
+    <section class="page-view" id="impressum" data-page="impressum">
+      <p class="eyebrow">Organisation</p>
+      <h2>Impressum</h2>
+
+      <div class="impressum-box">
+        <p><strong>Projekt:</strong> Helios Raketen-Team</p>
+        <p><strong>Standort:</strong> Hochschule Magdeburg-Stendal, Magdeburg</p>
+        <p><strong>Kontakt:</strong> Fabian.Huzar@stud.h2.de</p>
+        <p><strong>Verantwortlich für den Inhalt:</strong> Fabian Huzar</p>
+        <p>
+          <strong>Beschreibung:</strong><br>
+          Helios ist ein studentisches Raketenprojekt mit dem Ziel, technische
+          Entwicklung, Teamarbeit und praktische Konstruktion in einem realen
+          Raumfahrtprojekt zu verbinden.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PROJEKT-MODAL -->
+  <div class="project-modal" id="projectModal" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" aria-label="Fenster schließen">×</button>
+
+      <p class="eyebrow" id="modalEyebrow">Projekt</p>
+      <h2 id="modalTitle">Projektname</h2>
+      <p id="modalDescription"></p>
+
+      <div class="milestone-list" id="milestoneList"></div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
