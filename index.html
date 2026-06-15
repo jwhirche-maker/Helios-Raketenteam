@@ -777,6 +777,195 @@
         opacity: 0.32;
       }
     }
+/* --- DESIGN-FEINSCHLIFF: mehr Flow, weniger übereinandergelegt --- */
+
+body {
+  background: #020617;
+}
+
+body::before {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(14, 165, 233, 0.22), transparent 32%),
+    radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.14), transparent 34%),
+    radial-gradient(circle at 50% 95%, rgba(14, 165, 233, 0.25), transparent 42%),
+    linear-gradient(180deg, #020617 0%, #06172f 48%, #020617 100%);
+}
+
+body::after {
+  opacity: 0.38;
+  filter: blur(0.2px);
+}
+
+.planet-glow {
+  opacity: 0.55;
+  bottom: -310px;
+}
+
+/* Logo nicht mehr doppelt so dominant */
+.home-mark {
+  display: none;
+}
+
+.top-logo {
+  width: 128px;
+  padding: 12px 14px;
+  border: 1px solid rgba(125, 211, 252, 0.22);
+  border-radius: 22px;
+  background: rgba(2, 6, 23, 0.42);
+  backdrop-filter: blur(14px);
+  opacity: 0.92;
+}
+
+/* Startseite wirkt mehr wie eine zusammenhängende Szene */
+.home-box {
+  padding: 72px 34px;
+  border: 1px solid rgba(125, 211, 252, 0.18);
+  border-radius: 42px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.18), transparent 34%),
+    linear-gradient(180deg, rgba(15, 23, 42, 0.34), rgba(2, 6, 23, 0.12));
+  backdrop-filter: blur(8px);
+  box-shadow:
+    inset 0 0 60px rgba(125, 211, 252, 0.04),
+    0 0 80px rgba(14, 165, 233, 0.08);
+}
+
+.home-box::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border-radius: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+.home-box::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 22px;
+  width: 240px;
+  height: 4px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(125, 211, 252, 0.8), transparent);
+  opacity: 0.65;
+}
+
+/* Orbit dezenter, damit er nicht wie draufgelegt aussieht */
+.orbit {
+  opacity: 0.35;
+  border-color: rgba(125, 211, 252, 0.18);
+  filter: blur(0.2px);
+}
+
+/* Rakete stärker in den Hintergrund integriert */
+.rocket-small {
+  right: 7%;
+  bottom: 9%;
+  opacity: 0.48;
+  filter: drop-shadow(0 0 24px rgba(125, 211, 252, 0.32));
+}
+
+/* Seiten allgemein harmonischer */
+.page {
+  padding-top: 130px;
+}
+
+.lead {
+  color: #a7b7cc;
+}
+
+/* Karten flacher, luftiger und weniger wie harte Blöcke */
+.card,
+.team-card,
+.impressum-box,
+form,
+.investment {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.10), transparent 36%),
+    linear-gradient(180deg, rgba(15, 23, 42, 0.58), rgba(2, 6, 23, 0.42));
+  border-color: rgba(125, 211, 252, 0.18);
+  box-shadow:
+    inset 0 0 40px rgba(125, 211, 252, 0.025),
+    0 18px 60px rgba(0, 0, 0, 0.24);
+}
+
+.card:hover,
+.team-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow:
+    inset 0 0 42px rgba(125, 211, 252, 0.04),
+    0 24px 80px rgba(14, 165, 233, 0.15);
+}
+
+/* Grid wirkt mehr verbunden */
+.grid,
+.team-grid {
+  gap: 26px;
+}
+
+.roadmap {
+  position: relative;
+  margin-top: 54px;
+}
+
+.roadmap::before {
+  content: "";
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 50%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(125, 211, 252, 0.35), transparent);
+  z-index: -1;
+}
+
+.roadmap div {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.10), transparent 36%),
+    rgba(2, 6, 23, 0.68);
+}
+
+/* Menü etwas eleganter */
+.side-menu {
+  background:
+    radial-gradient(circle at 15% 8%, rgba(14, 165, 233, 0.20), transparent 34%),
+    linear-gradient(180deg, rgba(2, 6, 23, 0.96), rgba(3, 12, 28, 0.92));
+}
+
+.menu-button,
+.top-logo {
+  box-shadow: 0 0 34px rgba(14, 165, 233, 0.12);
+}
+
+/* Modal ebenfalls weniger hart */
+.modal-box {
+  background:
+    radial-gradient(circle at 20% 0%, rgba(14, 165, 233, 0.18), transparent 34%),
+    linear-gradient(180deg, rgba(3, 12, 28, 0.97), rgba(2, 6, 23, 0.96));
+}
+
+/* Handy-Ansicht sauberer */
+@media (max-width: 600px) {
+  .home-box {
+    padding: 58px 22px;
+    border-radius: 32px;
+  }
+
+  .top-logo {
+    width: 96px;
+    padding: 9px 10px;
+  }
+
+  .rocket-small {
+    opacity: 0.25;
+  }
+
+  .roadmap::before {
+    display: none;
+  }
+}
   </style>
 </head>
 
